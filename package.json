@@ -17,11 +17,13 @@
     "react-router-dom": "^6.5.0",
     "react-scripts": "5.0.1",
     "react-toastify": "^9.0.8",
+    "reactjs-toastr": "^1.1.0",
     "reduce-reducers": "^1.0.4",
     "redux": "4.2.0",
     "redux-devtools-extension": "^2.13.9",
     "redux-persist": "^6.0.0",
-    "redux-thunk": "^2.4.1"
+    "redux-thunk": "^2.4.1",
+    "tailwind-toast": "^1.1.0"
   },
   "scripts": {
     "start": "react-scripts start",

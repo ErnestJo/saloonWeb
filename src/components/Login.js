@@ -4,7 +4,9 @@ import FormExtra from "./FormExtra";
 import { useNavigate } from 'react-router-dom'
 import { useEffect, useRef, useState, useContext } from 'react'
 import axios from 'axios'
-import Input from "./Input";
+// const { toast } = require('tailwind-toast')
+import Notify from '../helper/Notify'
+
 
 const fields=loginFields;
 let fieldsState = {};
@@ -52,13 +54,23 @@ export default function Login(){
                 withCredentials: true,
               },
             )
-            console.log(response)
-            setUser('')
-            setPwd('')
-            setSuccess(true)
+            console.log(response.data.data)
+        
+            if (response.data.data.length > 0){
+              console.log("Nina kitu hapa  ")  	
+              Notify.notifySuccess('You have logged in Successufuly')
+              setUser('')
+              setPwd('')
+              setSuccess(true)
+            }
+            else {
+                console.log("sinakitu hapa")  
+                Notify.notifyErrorTopCenter('Sorry failed to login please check your login credentials')
+                setUser('')
+                setPwd('')
+                setSuccess(false)
+            }
           } catch (e) {}
-
-        alert("hello")
     }
 
     return(

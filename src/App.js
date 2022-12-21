@@ -1,5 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
+import 'react-toastify/dist/ReactToastify.css'
+import { ToastContainer } from 'react-toastify'
 import {
   BrowserRouter,
   Routes,
@@ -9,12 +11,15 @@ import LoginPage from './views/Login'
 
 function App() {
   return (
-   
-    <BrowserRouter>
+   <>
+   <ToastContainer />
+   <BrowserRouter>
     <Routes>
         <Route  path="/" element={<LoginPage/>} />
     </Routes>
    </BrowserRouter>
+   </>
+    
 
   );
 }
