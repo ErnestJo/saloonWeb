@@ -1,4 +1,4 @@
-import { CLEAR_STORAGE, SET_USER_DATA } from '../constants/shared'
+import { CLEAR_STORAGE, SET_USER_DATA, SET_ROLES } from '../constants/shared'
 
 export const clearStore = () => {
   return (dispatch) => {
@@ -13,6 +13,15 @@ export const InsertUserData = (userData) => {
     dispatch({
       type: SET_USER_DATA,
       payload: userData,
+    })
+  }
+}
+
+export const saveRolesData = (userRoles) => {
+  return (dispatch) => {
+    dispatch({
+      type: SET_ROLES,
+      payload: userRoles,
     })
   }
 }

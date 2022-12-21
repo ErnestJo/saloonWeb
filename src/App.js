@@ -7,6 +7,7 @@ import {
   Routes,
   Route,
 } from "react-router-dom";
+import { connect } from 'react-redux'
 import LoginPage from './views/Login'
 
 function App() {
@@ -24,4 +25,7 @@ function App() {
   );
 }
 
-export default App;
+const MapStateToProps = (state) => ({
+  sharedState: state.SharedState,
+})
+export default connect(MapStateToProps)(App)

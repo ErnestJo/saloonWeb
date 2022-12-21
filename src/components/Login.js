@@ -6,7 +6,8 @@ import { useEffect, useRef, useState, useContext } from 'react'
 import axios from 'axios'
 // const { toast } = require('tailwind-toast')
 import Notify from '../helper/Notify'
-
+import { connect } from 'react-redux'
+import { InsertUserData } from '../action/request'
 
 const fields=loginFields;
 let fieldsState = {};
@@ -14,7 +15,7 @@ fields.forEach(field=>fieldsState[field.id]='');
 
 const LOGIN_URL = '/api/StaffManagement/login'
 
-export default function Login(){
+function Login({ sharedState, InsertUserData, ...prop }){
     
     const [loginState,setLoginState]=useState(fieldsState);
 
@@ -54,10 +55,10 @@ export default function Login(){
                 withCredentials: true,
               },
             )
-            console.log(response.data.data)
+            console.log(response.data.data[0])
         
             if (response.data.data.length > 0){
-              console.log("Nina kitu hapa  ")  	
+              InsertUserData(response.data.data[0])
               Notify.notifySuccess('You have logged in Successufuly')
               setUser('')
               setPwd('')
@@ -112,3 +113,8 @@ export default function Login(){
  </form>
   )
 }
+
+const MapStateToProps = (state) => ({
+  sharedState: state.SharedState,
+})
+export default connect(MapStateToProps, { InsertUserData })(Login)
