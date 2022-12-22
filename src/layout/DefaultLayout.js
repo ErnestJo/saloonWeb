@@ -3,9 +3,11 @@ import {AppHeader, AppContent, AppSidebar, AppFooter}  from './../components/ind
 
 
 function DefaultLayout (){
-    return ( <div>
-        <AppSidebar />
-      </div>)
+    return ( 
+      <div>
+       <AppSidebar /> 
+      </div>
+      )
 }
 
 export default DefaultLayout;
