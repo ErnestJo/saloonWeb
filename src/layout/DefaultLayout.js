@@ -1,11 +1,11 @@
 import React from 'react'
-import {AppHeader, AppContent, AppSidebar, AppFooter}  from './../components/index';
+import {AppContent, AppSidebar}  from './../components/index';
 
 
 function DefaultLayout (){
     return ( 
       <div>
-       <AppSidebar /> 
+      <AppSidebar />
       </div>
       )
 }

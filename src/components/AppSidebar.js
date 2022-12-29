@@ -6,7 +6,7 @@ import { useState } from "react";
 import { AiFillEnvironment, AiOutlineFileText, AiOutlineLogout, AiOutlineSetting, AiOutlineMail, AiOutlineBarChart } from "react-icons/ai";
 import AppContent from './AppContent';
 import AppHeader from "./AppHeader";
-import AppFooter from './AppFooter'
+
 
 
 function AppSidebar() {
@@ -35,6 +35,7 @@ function AppSidebar() {
     ];
     
     return(
+      
         <div className="flex">
         <div
           className={`bg-dark-purple h-screen p-5 pt-8 ${open ? "w-72" : "w-20"} duration-300  relative`}
@@ -44,7 +45,7 @@ function AppSidebar() {
             onClick={() => setOpen(!open)} />
           <div className="inline-flex">
             <AiFillEnvironment className={`bg-amber-300 text-4xl rounded cursor-pointer block float-left mr-2 duration-500 ${open && "rotate-[360deg]"}`} />
-            <h1 className={`text-white origin-left font-medium text-2xl duration-300 ${!open && "scale-0"}`}>Police</h1>
+            <h1 className={`text-white origin-left font-medium text-2xl duration-300 ${!open && "scale-0"}`}></h1>
           </div>
 
           <div className={`flex items-center rounded-md bg-light-white mt-6 ${!open ? "px-2.5" : "px-4"} py-2`}>
@@ -82,17 +83,13 @@ function AppSidebar() {
             ))}
           </ul>
         </div>
-        <div >
-        <div className="wrapper d-flex flex-column min-vh-100 bg-light">
-        <AppHeader />
-        <div className="body flex-grow-1 px-3">
+        <div className="h-screen flex-1 p-7">
+         <AppHeader />   
         <AppContent />
-        </div>
-        <AppFooter />
-        </div>
-       </div>
       </div>
-     
+      
+      </div>
+    
     );
 }
 

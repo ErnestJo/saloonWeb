@@ -2,7 +2,9 @@ import React from 'react'
 
 function AppFooter() {
   return (
-    <div>AppFooter</div>
+    <div>
+    <h2>Am footer</h2>
+    </div>
   )
 }
 
